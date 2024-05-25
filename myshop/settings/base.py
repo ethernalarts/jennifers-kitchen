@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.shop.apps.ShopConfig',
+    'apps.cart.apps.CartConfig',
     'tailwind',
     'apps.theme.apps.ThemeConfig',
     'django_htmx',
@@ -35,7 +36,7 @@ INSTALLED_APPS = [
     'django_adminlte',
 
     # Optional: Skin for the admin interface
-    'django_adminlte_theme',
+    # 'django_adminlte_theme',
 
     # Any apps which need to have their templates overridden by adminlte
     'django.contrib.admin',
@@ -54,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'myshop.urls'
+CART_SESSION_ID = 'cart'
 
 
 TAILWIND_APP_NAME = "apps.theme"

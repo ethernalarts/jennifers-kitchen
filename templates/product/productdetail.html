@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+	<title>
+		{{ product.name }}
+	</title>
+{% endblock %}
+
+{% block content %}
+	<div class="mt-12 mb-12 h-1/2 p-4 md:pl-4 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+		<!-- Product Image -->
+		<div class="w-2/5">
+			<img
+				class="w-full h-full"
+				src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"
+			>
+		</div>
+
+		<!-- Other details -->
+		<div class="text-gray-800">
+			<!-- Product Name -->
+			<p class="text-gray-800 text-3xl font-bold">
+				{{ product.name }}
+			</p>
+
+			<!-- Product Category -->
+			<p class="mt-2 text-xl font-semibold text-lime-700">
+				<a href="{{ product.category.get_absolute_url }}">
+					{{ product.category }}
+				</a>
+			</p>
+
+			<!-- Product Price -->
+			<p class="mt-8 font-bold text-gray-800 text-2xl">
+				NGN {{ product.price }}
+			</p>
+
+			<!-- Product Description -->
+			<p class="w-full md:max-w-7xl mt-4 font-semibold text-md">
+				{{ product.description }}
+			</p>
+
+			<!-- Add to Cart button -->
+			<button
+				type="button"
+				class="mt-4 px-6 py-3 text-white text-lg bg-lime-700 rounded rounded-sm
+						border-lime-700 hover:bg-lime-800"
+			>
+				Add to Bag
+			</button>
+		</div>
+	</div>
+{% endblock %}
