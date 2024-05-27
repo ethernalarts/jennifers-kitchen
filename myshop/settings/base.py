@@ -67,6 +67,7 @@ NPM_BIN_PATH = r"C:/Program Files/nodejs/npm.cmd"
 
 # Template Directories
 ROOT = os.path.join(BASE_DIR, "templates")
+CART = os.path.join(BASE_DIR, "apps/cart/templates")
 
 
 TEMPLATES = [

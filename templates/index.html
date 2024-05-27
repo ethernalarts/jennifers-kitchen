@@ -8,30 +8,122 @@
 {% endblock %}
 
 {% block content %}
-	<div class="bg-lime-500 h-full p-8">
-		<!-- mini Header -->
+	<!-- Lime Section	-->
+	<div class="h-full p-8 pt-16 pb-16 flex flex-col md:flex-row bg-lime-500">
 		<div class="">
-			<p class="font-bold text-5xl text-lime-900 w-full">
-				Home Just Got Closer
-			</p>
+			<!-- mini Header -->
+			<div class="">
+				<p class="font-bold text-5xl text-lime-900 w-full text-center md:text-left">
+					Home Just Got Closer
+				</p>
+			</div>
+
+			<!-- max Header -->
+			<div class="">
+				<p
+					class="mt-4 font-bold text-8xl leading-tight text-gray-900 w-full md:max-w-5xl
+						   text-center md:text-left"
+				>
+					Exclusive Traditional Nigerian Dishes
+				</p>
+			</div>
+
+			<!-- Add to Cart button -->
+			<div  class="text-center md:text-left">
+				<a href="{% url 'shop:product_list' %}">
+					<button
+						type="button"
+						class="mt-14 px-10 py-6 text-white text-xl bg-lime-900 rounded-sm font-semibold
+							   hover:bg-lime-800 mb-16 md:mb-0"
+					>
+						Have a Taste of Home
+					</button>
+				</a>
+			</div>
 		</div>
 
-		<!-- max Header -->
-		<div class="">
-			<p class="mt-4 font-bold text-8xl leading-tight text-gray-900 w-full max-w-4xl">
-				Exclusive Delicious Nigerian Dishes
-			</p>
-		</div>
-
-		<!-- Add to Cart button -->
-		<a href="{% url 'shop:product_list' %}">
-			<button
-				type="button"
-				class="mt-14 p-5 text-white text-xl bg-lime-800 rounded rounded-sm font-semibold
-					   hover:bg-lime-900"
+		<!-- Food Image -->
+		<div class="w-96 flex items-center mx-auto mb-8 md:mb-0">
+			<img
+				class="w-full"
+				src="{% static 'img/circle-efo-riro.png' %}"
 			>
-				Explore Our Menu
-			</button>
-		</a>
+		</div>
+	</div>
+
+	<!-- Gray Section -->
+	<div class="bg-gray-200 h-full p-8 md:p-16">
+			<!-- Different Continent -->
+			<div class="mt-8 text-center mx-auto">
+				<p
+					class="font-bold text-7xl leading-tight text-gray-900 w-full"
+				>
+					Different Continent.<br> Same Home Recipe
+				</p>
+			</div>
+
+		<!-- Customer's Favorites -->
+		<div class="mt-24 bg-white p-16">
+			<div class="text-center mx-auto">
+				<p
+					class="font-bold text-5xl leading-tight text-gray-900 w-full"
+				>
+					Our Customer's Favourites
+				</p>
+			</div>
+
+			<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8">
+				<div class="w-80">
+					<img
+						class="w-full h-60"
+						src="{% static 'img/fresh-fish-pepper-soup.jpg' %}"
+					>
+					<p
+						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
+					>
+						Pepper Soup with Cat Fish
+					</p>
+				</div>
+
+
+				<div class="w-80">
+					<img
+						class="w-full h-60"
+						src="{% static 'img/pounded-yam-egusi-soup.jpg' %}"
+					>
+					<p
+						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
+					>
+						Pounded Yam with Egusi Soup
+					</p>
+				</div>
+
+
+				<div class="w-80">
+					<img
+						class="w-full h-60"
+						src="{% static 'img/efo-riro.jpg' %}"
+					>
+					<p
+						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-900 w-3/4 mx-auto"
+					>
+						Efo Riro with Assorted Meat
+					</p>
+				</div>
+			</div>
+
+			<!-- Add to Cart button -->
+			<div  class="text-center mx-auto">
+				<a href="{% url 'shop:product_list' %}">
+					<button
+						type="button"
+						class="mt-16 px-20 py-6 text-white text-xl bg-lime-900 rounded-sm font-semibold
+							   hover:bg-lime-800 mb-16 md:mb-0"
+					>
+						Full Menu
+					</button>
+				</a>
+			</div>
+		</div>
 	</div>
 {% endblock %}

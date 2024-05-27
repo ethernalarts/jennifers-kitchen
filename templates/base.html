@@ -61,9 +61,8 @@
 						<button
 							onclick="myFunction();"
 							type="button"
-							class="relative inline-flex items-center justify-center rounded-none p-2 bg-green-900
-							       hover:bg-green-800 hover:text-white focus:outline-none
-							       focus:ring-2 focus:ring-white"
+							class="relative inline-flex items-center justify-center bg-lime-700 p-4 rounded-sm
+							       hover:bg-lime-800 mr-4"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
 						>
@@ -189,7 +188,7 @@
 								<a
 								    href=""
 								    class="{% active_link 'shop:contact' strict=True css_class='border-t-orange-500 text-orange-500 md:hover:text-orange-500' %}
-								           flex h-20 items-center hover:h-20 text-lime-600 hover:text-lime-400
+								           flex h-20 items-center text-lime-600 hover:text-lime-400
 								           rounded-sm p-4 md:px-6 text-lg font-semibold
 										   border-t-4 border-black"
 								    aria-current="page"
@@ -208,29 +207,6 @@
 								        Contact Us
 								    </span>
 								</a>
-
-								<!-- Bag -->
-<!--								<a-->
-<!--								    href=""-->
-<!--								    class="{% active_link 'stafflist' css_class='text-orange-400 md:hover:text-orange-400 focus:border-orange-400' %}-->
-<!--								           flex h-20 items-center hover:h-20 text-lime-600 hover:text-lime-400-->
-<!--								           rounded-sm p-4 md:px-6 text-lg font-semibold focus:border-lime-600-->
-<!--											border-2 border-black"-->
-<!--								    aria-current="page"-->
-<!--								>-->
-<!--									&lt;!&ndash; Cart icon &ndash;&gt;-->
-<!--								    <span class="inline-flex items-center">-->
-<!--								        <svg-->
-<!--									        xmlns="http://www.w3.org/2000/svg"-->
-<!--									        viewBox="0 0 24 24"-->
-<!--									        fill="currentColor"-->
-<!--									        class="w-6 h-6 mr-2"-->
-<!--								        >-->
-<!--											<path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z" clip-rule="evenodd" />-->
-<!--										</svg>-->
-<!--								        Bag-->
-<!--								    </span>-->
-<!--								</a>-->
 							</div>
 						</div>
 
@@ -240,7 +216,7 @@
 						    class="flex inline-flex items-center mr-4 text-lg cursor-pointer font-semibold text-lime-600 space-x-4"
 						>
 							<!-- User icon -->
-							<span class="bg-lime-700 p-4 rounded-sm hover:bg-lime-800">
+							<span class="bg-lime-700 p-4 rounded-sm hover:bg-lime-600">
 						        <svg
 							        xmlns="http://www.w3.org/2000/svg"
 							        fill="none"
@@ -254,7 +230,8 @@
 
 <!--						        Your cart is empty-->
 
-							<span class="bg-lime-700 p-4 rounded-sm hover:bg-lime-800">
+							<!-- Shopping Bag -->
+							<span class="bg-lime-700 p-4 rounded-sm hover:bg-lime-600">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
