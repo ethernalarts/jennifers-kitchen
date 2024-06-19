@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+	<title>
+		Your Shopping Bag
+	</title>
+{% endblock %}
+
+{% block content %}
+	<div class="p-8 pt-12 pb-20">
+
+		<div class="relative overflow-x-auto">
+
+			<h1 class="font-bold text-center md:text-left text-3xl">Your Shopping Bag</h1>
+
+			{% if cart %}
+			    <table class="mt-8 w-full text-md text-left rtl:text-right text-gray-500 shadow-lg">
+
+					<!-- Table Head -->
+			        <thead class="text-md text-black uppercase bg-lime-600">
+			            <tr>
+			                <th scope="col" class="px-16 py-3">
+			                    Image
+			                </th>
+			                <th scope="col" class="px-6 py-3">
+			                    Product
+			                </th>
+			                <th scope="col" class="px-6 py-3">
+			                    Quantity
+			                </th>
+			                <th scope="col" class="px-3 py-3">
+			                    Unit Price
+			                </th>
+			                <th scope="col" class="px-6 py-3">
+			                    Price
+			                </th>
+			                <th scope="col" class="px-6 py-3">
+			                    Action
+			                </th>
+			            </tr>
+			        </thead>
+
+					<!-- Table Body -->
+				    <div id="cart-items">
+					    {% include 'snippets/cartitems.html' %}
+				    </div>
+
+					<!-- Table Foot -->
+				    <tfoot>
+			            <tr class="font-semibold uppercase text-gray-900 bg-lime-600 w-full">
+			                <th scope="row" class="px-6 py-3 text-base">Total</th>
+			                <td class="px-6 py-3"></td>
+			                <td class="px-6 py-3 font-semibold text-lg ml-28">{{ cart|length }}</td>
+			                <td class="px-6 py-3"></td>
+			                <td class="px-6 py-3 font-semibold text-lg">${{ cart.get_total_price }}</td>
+			                <td class="px-6 py-3"></td>
+			            </tr>
+			        </tfoot>
+			    </table>
+				{% else %}
+					<div class="mt-8 p-4 text-2xl font-semibold text-center">
+						You have no items in your Bag
+					</div>
+			{% endif %}
+		</div>
+
+		<!-- Continue Shopping, Checkout Buttons -->
+		<div class="mt-12 flex flex-row justify-center">
+			<a href="{% url 'shop:product_list' %}">
+				<button
+					type="button"
+					class="text-lime-700 border-4 border-lime-700 hover:bg-lime-700 focus:ring-4 hover:border-lime-700
+						   focus:outline-none focus:ring-lime-700 font-semibold rounded-sm text-lg px-5 py-2 me-2 mb-2
+						   text-center bg-none hover:text-white focus:ring-offset-2 focus:bg-lime-700 focus:text-white"
+				>
+					Continue Shopping
+				</button>
+			</a>
+
+			{% if cart %}
+				<a href="#">
+					<button
+						type="button"
+						class="text-white border-4 border-lime-700 hover:bg-lime-800 focus:ring-4 bg-lime-700 py-2
+							   focus:outline-none focus:ring-lime-500 font-medium rounded-sm text-lg px-5
+							   text-center me-2 mb-2 hover:border-lime-800 items-center inline-flex"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6 w-5 h-5 mr-2"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+						</svg>
+						Checkout
+					</button>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

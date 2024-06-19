@@ -3,6 +3,7 @@
 module.exports = {
     content: [
         "../../../templates/**/*.html",
+        "./node_modules/flowbite/**/*.js",
     ],
     presets: [],
     darkMode: 'media', // or 'class'
@@ -969,6 +970,7 @@ module.exports = {
          * comment the line below to disable '@tailwindcss/forms'.
          */
         require('tailwindcss'),
+        require('flowbite/plugin'),
         //require('@tailwindcss/line-clamp'),
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),

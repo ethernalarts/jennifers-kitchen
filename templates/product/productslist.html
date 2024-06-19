@@ -17,13 +17,12 @@
 {% endblock %}
 
 {% block content %}
-	<div class="flex flex-col md:flex-row space-x-8 h-full">
+	<div class="flex flex-col md:flex-row md:space-x-8 h-full">
 
 		<!-- sidebar -->
 		<div>
 			<nav
-				class="flex flex-col w-full md:w-72 px-4 tex-gray-900 border-r-2 border-lime-600 bg-lime-600
-						text-white h-full"
+				class="flex flex-col w-full md:w-72 px-4 tex-gray-900 bg-lime-600 text-white h-full"
 			>
 				<div class="font-bold text-xl mt-20">
 					Categories
@@ -47,6 +46,7 @@
 								<a href="{% url 'shop:product_list_by_category' c.slug %}">
 									<button
 										type="button"
+										hx-target="#products"
 										{% if c.slug == category.slug %}
 											class="mt-2 px-4 py-3 text-white border-lime-700 hover:text-white cursor-pointer
 												   bg-lime-800 hover:bg-lime-800 font-semibold rounded rounded-sm
@@ -67,48 +67,65 @@
         </div>
 
 		<!-- content -->
-		<div id="main" class="w-screen bg-none pb-12 pt-14">
-			<h1 class="font-bold text-3xl text-gray-800">
+		<div
+			id="main"
+			class="w-full md:w-screen bg-none pl-8 md:pl-0 pb-12 pt-14 pr-8"
+		>
+			<h1 class="text-center md:text-left font-bold text-4xl md:text-3xl text-gray-800">
 				{% if category %}
 					{{ category.name }}
 					{% else %}
-						<span class="inline-flex">Our Delicacies</span>
+						<span class="inline-flex">
+							Our Delicacies
+						</span>
 				{% endif %}
 			</h1>
 
 			<div
 				id="products"
-				class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-x-1 mt-8 mb-8"
+				class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-x-4 mt-12 md:mt-8 mb-8"
 			>
 				{% for product in products %}
 					<div
-						class="flex flex-col w-80 border shadow-lg hover:border-lime-600
-								pb-6"
+						class="flex flex-col w-full border shadow-lg hover:border-lime-600 pb-8
+								md:pb-6"
 					>
 						<a href="{{ product.get_absolute_url }}">
 							<img
-								class="w-full h-60"
+								class="w-full h-full md:h-60"
 								src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/default.png' %}{% endif %}"
 								alt="{{ product.name }}"
 							>
-
-							<div class="mx-auto text-center mt-4 font-bold w-48">
-								<p class="text-gray-600 text-lg">
-									{{ product.name }}
-								</p>
-
-								<p class="mt-2 text-xl text-lime-700">
-									${{ product.price }}
-								</p>
-
-								<button
-									class="mt-4 px-6 py-3 text-white text-lg bg-lime-700 rounded rounded-sm
-											border-lime-700 hover:bg-lime-800"
-								>
-									Add to Bag
-								</button>
-							</div>
 						</a>
+
+						<div class="mx-auto text-center mt-6 md:mt-4 font-bold w-3/4 md:w-48">
+							<p class="text-gray-600 text-xl md:text-lg">
+								{{ product.name }}
+							</p>
+
+							<p class="mt-4 md:mt-2 text-xl text-lime-700">
+								${{ product.price }}
+							</p>
+
+							<button
+								type="button"
+								hx-post="{% url 'cart:cart_add' product.id %}"
+								class="mt-6 md:mt-4 px-6 py-3 text-white text-lg bg-lime-700 rounded rounded-sm
+									   border-lime-700 hover:bg-lime-800 inline-flex items-center"
+							>
+								Add to Bag
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor"
+									class="size-6 text-white w-6 h-6 ml-2"
+								>
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+								</svg>
+							</button>
+						</div>
 					</div>
 				{% endfor %}
 			</div>

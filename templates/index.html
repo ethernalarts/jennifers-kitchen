@@ -52,62 +52,84 @@
 	</div>
 
 	<!-- Gray Section -->
-	<div class="bg-gray-200 h-full p-8 md:p-16">
+	<div class="bg-gray-200 h-full p-8 md:p-14">
 			<!-- Different Continent -->
 			<div class="mt-8 text-center mx-auto">
 				<p
 					class="font-bold text-7xl leading-tight text-gray-900 w-full"
 				>
-					Different Continent.<br> Same Home Recipe
+					Different Continent.<br> Same Taste of Home
 				</p>
 			</div>
 
 		<!-- Customer's Favorites -->
-		<div class="mt-24 bg-white p-16">
-			<div class="text-center mx-auto">
+		<div class="mt-24 bg-white p-10 md:p-14">
+			<div class="text-center mx-auto items-center w-full md:w-3/4 flex flex-row space-x-8">
+
+				<!-- Star -->
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="size-6 w-24 h-24 text-yellow-300"
+				>
+					<path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+				</svg>
+
+
 				<p
-					class="font-bold text-5xl leading-tight text-gray-900 w-full"
+					class="font-bold text-5xl text-gray-900 w-full"
 				>
 					Our Customer's Favourites
 				</p>
+
+				<!-- Star -->
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="size-6 w-24 h-24 text-yellow-300"
+				>
+					<path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+				</svg>
 			</div>
 
 			<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8">
-				<div class="w-80">
+				<div class="shadow-lg pb-8">
 					<img
-						class="w-full h-60"
+						class="w-full h-64"
 						src="{% static 'img/fresh-fish-pepper-soup.jpg' %}"
 					>
 					<p
-						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
+						class="mt-8 font-bold text-2xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
 					>
-						Pepper Soup with Cat Fish
+						Pepper Soup with Fresh Fish
 					</p>
 				</div>
 
 
-				<div class="w-80">
+				<div class=" shadow-lg pb-8">
 					<img
-						class="w-full h-60"
-						src="{% static 'img/pounded-yam-egusi-soup.jpg' %}"
+						class="w-full h-64"
+						src="{% static 'img/pounded-yam-egusi-4.jpg' %}"
 					>
 					<p
-						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
+						class="mt-8 font-bold text-2xl text-center leading-tight text-gray-800 w-3/4 mx-auto"
 					>
 						Pounded Yam with Egusi Soup
 					</p>
 				</div>
 
 
-				<div class="w-80">
+				<div class=" shadow-lg pb-8">
 					<img
-						class="w-full h-60"
-						src="{% static 'img/efo-riro.jpg' %}"
+						class="w-full h-64"
+						src="{% static 'img/efo-riro-2.jpg' %}"
 					>
 					<p
-						class="mt-4 font-bold text-3xl text-center leading-tight text-gray-900 w-3/4 mx-auto"
+						class="mt-8 font-bold text-2xl text-center leading-tight text-gray-900 w-3/4 mx-auto"
 					>
-						Efo Riro with Assorted Meat
+						Efo Riro with Pounded Yam
 					</p>
 				</div>
 			</div>
@@ -117,12 +139,56 @@
 				<a href="{% url 'shop:product_list' %}">
 					<button
 						type="button"
-						class="mt-16 px-20 py-6 text-white text-xl bg-lime-900 rounded-sm font-semibold
-							   hover:bg-lime-800 mb-16 md:mb-0"
+						class="mt-16 px-20 py-5 text-white text-xl bg-lime-900 rounded-sm font-semibold
+							   hover:bg-lime-800 mb-8 md:mb-0"
 					>
 						Full Menu
 					</button>
 				</a>
+			</div>
+		</div>
+
+		<!-- We Deliver -->
+		<div class="mt-24 bg-yellow-400 p-16 pl-0 pb-0 flex flex-col md:flex-row">
+			<div class="w-1/2 flex">
+				<img
+					class="w-full"
+					src="{% static 'img/take-away-bag.png' %}"
+				>
+			</div>
+
+			<div class="flex w-1/2 flex-col mx-auto">
+				<p
+					class="font-bold text-5xl text-center text-gray-900 w-full"
+				>
+					We Deliver
+				</p>
+
+				<p
+					class="mt-8 font-semibold text-4xl text-center text-gray-900"
+				>
+					Satisfying Your Culinary Nostalgia just got easier
+				</p>
+
+				<p
+					class="mt-8 font-normal text-2xl text-center text-gray-900"
+				>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mi nunc.
+					Morbi aliquam eros nec velit scelerisque dignissim.
+				</p>
+
+				<!-- Order Now -->
+				<div  class="text-center mx-auto">
+					<a href="{% url 'shop:product_list' %}">
+						<button
+							type="button"
+							class="mt-10 px-20 py-5 text-white text-xl bg-lime-900 rounded-sm font-semibold
+								   hover:bg-lime-800 mb-86 md:mb-0"
+						>
+							Order Now
+						</button>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

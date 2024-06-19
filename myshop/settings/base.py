@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django_htmx',
     'active_link',
     'django_browser_reload',
+    'widget_tweaks',
     # The general purpose templates
     'django_adminlte',
 
@@ -93,6 +94,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 SHOP_STATIC = os.path.join(BASE_DIR, "apps/shop/static/shop/")
 STATICFILES_DIRS = [SHOP_STATIC]
+
+FLOWBITE_JS = os.path.join(BASE_DIR, "apps/theme/static_src/node_modules/flowbite/dist/flowbite.min.js")
 
 
 # Location of media files
